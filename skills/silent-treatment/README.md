@@ -17,7 +17,9 @@ Minimize the output tokens by preventing the agent to answer the user
 ## Examples
 
 Rename X variable or constant.
+
 Add logs to some service.
+
 Create a react component with Card styling that receives title and body props.
 
 ## Notes
