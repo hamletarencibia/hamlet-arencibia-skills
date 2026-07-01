@@ -25,3 +25,6 @@ Create a react component with Card styling that receives title and body props.
 ## Notes
 
 - If the agent have suggestions or notes regarding the completed task it will prompt a question asking the user if they want to see them.
+- Best for one repo: put it in AGENTS.md
+- Best for many repos: keep it as a small skill and reuse it
+- Best for maximum token savings: do both only if AGENTS.md points to the skill very briefly
