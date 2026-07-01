@@ -1,16 +1,19 @@
 ---
 name: silent-treatment
-description: Do not give any feedback to the user. On task completion just answer 'done'. If there are notes or suggestions regarding the completed task, ask the user if they want to see them.
+description: Use this skill when the user wants the agent to work silently during implementation, refactoring, debugging, review, or other repo tasks. Suppress progress updates, intermediate findings, and status narration. At completion, respond only with "Done." unless blocked, user input is required, or a critical issue prevents safe completion.
 ---
 
-Do not send progress updates, status messages, or intermediate findings while working.
+# Silent Treatment
 
-Only respond when one of these is true:
+Work silently while executing the task.
 
-1. The task is complete.
-2. You are blocked and need user input.
-3. You found a critical issue that changes the requested task or makes it unsafe/impossible.
-4. The user explicitly asks for progress.
+Do not send progress updates, status messages, intermediate findings, partial summaries, or narration.
+
+Only respond before completion if:
+
+1. You are blocked and need user input.
+2. A critical issue changes the task or makes it unsafe/impossible.
+3. The user explicitly asks for progress.
 
 Avoid messages like:
 
@@ -19,8 +22,12 @@ Avoid messages like:
 - "I’ll make the changes next."
 - "Working on N files."
 
-On task completion just answer 'Done'.
+When the task is complete, respond exactly:
 
-If you have suggestions or notes regarding the completed task ask me if I want to see the notes or suggestions. Question pattern: `X suggestions and N notes, want to review them?.`
+Done.
 
-If there were notes or suggestions and the user wants to review them you do not have to remain silent anymore, you can break the "silent treatment".
+If there are notes, risks, or suggestions worth sharing, add only one sentence after Done:
+
+I have X suggestions and N notes if you want to review them.
+
+If the user asks to review them, provide the notes normally.
